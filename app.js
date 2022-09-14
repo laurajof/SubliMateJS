@@ -1,87 +1,66 @@
-let sticker = ""
-let precio = ""
-let cantidad = ""
-let articuloIngresado = ""
+//constantes botones
+const button = document.querySelector("#x1");
+const para = document.createElement("p");
+const valor = document.createElement("p");
+para.innerHTML = "Sticker x unidad";
+valor.innerHTML = "Valor $70"; 
 
-let resultado = ""
-let totalCompra = 0;
+const button10 = document.querySelector("#x10");
+const para10 = document.createElement("p");
+const valor10 = document.createElement("p");
+para10.innerHTML = "Stickers x10 unidades";
+valor10.innerHTML = "Valor $500";
 
-//Bienvenida
-function solicitarNombre (){
-  let nombre = prompt("Ingrese su nombre");
-  alert("Bienvenido a la tienda de Stickers de SubliMate, " + nombre.toUpperCase() + "!" + "\nTenemos: \nStickers por unidad a $70 \nPack x 10 Stickers a $500 \nPack x 20 Stickers a $900.");
+const button20 = document.querySelector("#x20");
+const para20 = document.createElement("p");
+const valor20 = document.createElement("p");
+para20.innerHTML = "Stickers x20 unidades";
+valor20.innerHTML = "Valor $900";
+
+//carrito
+button.onclick = function(){
+    document.getElementById("comprar").appendChild(para);
+    document.getElementById("valor").appendChild(valor);
 }
 
-class Stickers {
-  constructor(sticker, precio, cantidad) {
-    this.sticker = sticker;
-    this.precio = parseFloat (precio);
-    this.cantidad = cantidad;
+button10.onclick = function(){
+    document.getElementById("comprar").appendChild(para10);
+    document.getElementById("valor").appendChild(valor10);
+}
+
+button20.onclick = function(){
+    document.getElementById("comprar").appendChild(para20);
+    document.getElementById("valor").appendChild(valor20);
+}
+
+//formulario
+class Cliente {
+  constructor(nombre, mail, celular){
+      this.nombre = nombre;
+      this.mail = mail;
+      this.celular = celular;
   }
 }
 
-// ARRAYS
-const arrayStickers= [];
+let boton = document.getElementById("enviar");
+boton.addEventListener("click",validarFormulario);
 
-const productos = [{
-    nombre: "Sticker x1",
-    precio: 70,
-    },
-    {nombre: "Sticker x10",
-    precio: 500,
-    },
-    {nombre: "Sticker x20",
-    precio: 900,
-    },
-];
-
-const carrito = [];
-
-solicitarNombre();
-
-let navegar = prompt("Que desea hacer? \n 1: Comprar Stickers \n 3: Mostrar producto destacado \n 4: Salir ");
-
-while (navegar !== "4"){
-    if (navegar == "1"){
-        sticker = prompt("ingrese el producto que desea comprar \n 1: Sticker x1 \n 2: Stickers x10 \n 3: Stickers x20");
-        if (sticker == "1") {
-            alert(`Excelente opción! Elegiste: ${productos[0].nombre} por un valor de $ ${productos[0].precio} `);
-            precioCompra = productos[0].precio
-        } else if (sticker == "2") {
-          alert(`Excelente opción! Elegiste: ${productos[1].nombre} por un valor de $ ${productos[1].precio} `);
-          precioCompra = productos[1].precio
-        } else if (sticker ==="3") {
-          alert(`Excelente opción! Elegiste: ${productos[2].nombre} por un valor de $ ${productos[2].precio} `);
-          precioCompra = productos[2].precio
-        } else {
-            alert ("ingrese una opción válida")
-            sticker = prompt("1: Sticker x1 \n 2: Stickers x10 \n 3: Stickers x20");
-        }
-        alert ("El precio del producto elejido es de $" + " " + precioCompra);
-
-        cantidad = prompt("ingrese cuantos quiere");
-
-        resultado = precioCompra * cantidad
-        totalCompra = resultado + totalCompra
-
-        articuloIngresado = new Stickers (sticker, precio, cantidad);
-      
-        arrayStickers.push(articuloIngresado);
-      
-        console.log(arrayStickers);
-    }
-    if (navegar == "2"){
-        alert ("Finalizó su compra con un total de $:" + " " + totalCompra + ". Nos contactaremos con usted a la brevedad.")
-    }
-    //Producto destacado
-    if (navegar === "3"){
-        productoDestacado = (productos.filter((e)=> e.precio < 100));
-        console.log(productoDestacado)
-        for (var i =0; i < productoDestacado.length; i++){
-            alert (`Nuestro producto destacado del mes es: ${productos[i].nombre} a un precio de $ ${productos[i].precio}`)
-        }
-    }
-    navegar = prompt("Elija una opcion: \n 1: Seguir comprando \n 2: Finalizar compra \n 3: Mostrar producto destacado \n 4: Salir");
+function validarFormulario(){
+  let nombre = document.getElementById("nombre").value;
+  let email = document.getElementById("mail").value;
+  let celular = document.getElementById("celular").value;
+  let cliente1 = new Cliente(nombre, email, celular);
+  console.log(cliente1);
+  mostrar(cliente1);
 }
- 
-alert ("Gracias por tu visita!")
+
+function mostrar(cliente){
+  let formulario = document.getElementById("usuario");
+  formulario.innerHTML = "";
+//Nuevo Cliente
+  let nuevoCliente = document.createElement("div")
+  nuevoCliente.innerHTML = `<h1>Gracias ${cliente.nombre} por contactarnos! En breve recibiras un email en: ${cliente.mail}</h1>`;
+
+  nuevoCliente.className = "datos";
+  formulario.appendChild(nuevoCliente);
+}

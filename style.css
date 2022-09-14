@@ -1,12 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.html{
+    height: 100%;
+}
 .body{
     background-color: rgb(205, 161, 246);
+    font-family: 'Didact Gothic', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .logo{
-    width: 200px;   
+    width: 180px;
+    padding: 15px;
 }
 
 .titulo{
     text-align: center;
-
+}
+.header{
+    background-color: #d3bcf6;
+    align-items: center;
+}
+/* main */
+.main{
+    padding: 20px;
+}
+.main__usuario{
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;    
+}
+.main__usuario__form{
+    display: flex;
+    flex-direction: column;
+}
+.datos{
+    border: 2px solid white;
+    text-align: center;
+    /* font-size: 8px; */
+    padding: 2px;
+    margin: auto;
+}
+/* botones */
+.boton{
+    width: fit-content;
+    border: solid 3px violet;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 50px auto;
+}
+.botones{
+    text-align: center;
+}
+/* footer */
+.footer{
+    margin-top: auto;
+}
+.footer__misredes{
+    background-color: #d3bcf6;
+    display: flex;
+    justify-content: center;
+}
+.bi{
+    color: black;
+    margin: 10px;
 }
