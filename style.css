@@ -54,7 +54,15 @@
     margin: 50px auto;
 }
 .botones{
+    padding: 5px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.sticker{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 /* footer */
 .footer{

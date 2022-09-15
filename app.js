@@ -1,4 +1,4 @@
-//constantes botones
+/* //constantes botones
 const button = document.querySelector("#x1");
 const para = document.createElement("p");
 const valor = document.createElement("p");
@@ -31,7 +31,45 @@ button10.onclick = function(){
 button20.onclick = function(){
     document.getElementById("comprar").appendChild(para20);
     document.getElementById("valor").appendChild(valor20);
+} */
+const datosStickers = [
+  {
+      id: 1,
+      nombre: "Stickers x1",
+      descripcion: "1 Sticker a elección",     precio: 70,
+  },
+  {
+      id: 10,
+      nombre: "Stickers x10",
+      descripcion: "Pack 10 Stickers a elección",
+      precio: 500,
+  },
+  {
+      id: 20,
+      nombre: "Stickers x20",
+      descripcion: "Pack 20 Stickers a elección",
+      precio: 900,
+  },
+];
+
+const mostrarStickers = ()=>{
+  let contenedor = document.querySelector
+  ("#sticker");
+  datosStickers.forEach((stick)=> {
+      let sticker = document.createElement("div");
+      sticker.classList.add("botones")
+      sticker.innerHTML=`<div class="card" style="width: 10rem;">
+      <div class="card-body">
+        <h5 class="card-title">${stick.nombre}</h5>
+        <h5 class="card-title">${stick.precio}</h5>
+        <p class="card-text">${stick.descripcion}</p>
+        <a href="#" id=${stick.id} class="btn btn-primary">Elegir</a>
+      </div>
+    </div>`;
+      contenedor.appendChild(sticker)
+  });
 }
+mostrarStickers();
 
 //formulario
 class Cliente {
