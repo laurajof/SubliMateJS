@@ -61,7 +61,6 @@ const mostrarStickers = ()=>{
       sticker.innerHTML=`<div class="card" style="width: 10rem;">
       <div class="card-body">
         <h5 class="card-title">${stick.nombre}</h5>
-        <h5 class="card-title">${stick.precio}</h5>
         <p class="card-text">${stick.descripcion}</p>
         <a href="#" id=${stick.id} class="btn btn-primary">Elegir</a>
       </div>
@@ -70,6 +69,17 @@ const mostrarStickers = ()=>{
   });
 }
 mostrarStickers();
+
+const mostrarprecio = () =>{
+    datosStickers.forEach((stick) => {
+        document.getElementById(`${stick.id}`).addEventListener(`click`, () => {
+            let precioStickers = (stick.precio)
+            console.log(precioStickers) 
+        })
+    })
+}
+mostrarprecio();
+
 
 //formulario
 class Cliente {
