@@ -108,7 +108,8 @@ function mostrar(cliente){
 //Nuevo Cliente
   let nuevoCliente = document.createElement("div")
   nuevoCliente.innerHTML = `<h1>Gracias ${cliente.nombre} por contactarnos! En breve recibiras un email en: ${cliente.mail}</h1>`;
-
+  
   nuevoCliente.className = "datos";
   formulario.appendChild(nuevoCliente);
 }
+const guardarcliente = JSON.stringify(nuevoCliente);
