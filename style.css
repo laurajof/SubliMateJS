@@ -14,7 +14,7 @@
 }
 
 .logo{
-    width: 180px;
+    width: 13rem;
     padding: 15px;
 }
 
@@ -29,19 +29,11 @@
 .main{
     padding: 20px;
 }
-.main__usuario{
-    width: 80%;
-    margin: 0 auto;
-    align-items: center;    
-}
-.main__usuario__form{
-    display: flex;
-    flex-direction: column;
-}
+
 .datos{
     border: 2px solid white;
     text-align: center;
-    /* font-size: 8px; */
+    font-size: 23px;
     padding: 2px;
     margin: auto;
 }
@@ -56,8 +48,6 @@
 .botones{
     padding: 5px;
     text-align: center;
-    display: flex;
-    flex-direction: row;
 }
 .sticker{
     display: flex;
