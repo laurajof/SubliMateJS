@@ -17,6 +17,10 @@ const datosStickers = [
       precio: 900,
   },
 ];
+//array carrito
+const carrito = [];
+
+
 
 const mostrarStickers = ()=>{
   let contenedor = document.querySelector
@@ -33,18 +37,36 @@ const mostrarStickers = ()=>{
     </div>`;
       contenedor.appendChild(sticker)
   });
+  
 }
 mostrarStickers();
 
-const mostrarprecio = () =>{
+ //Carrito
+ const mostrarprecio = () =>{
     datosStickers.forEach((stick) => {
         document.getElementById(`${stick.id}`).addEventListener(`click`, () => {
-            let precioStickers = (stick.precio)
-            console.log(precioStickers) 
-        })
-    })
-}
-mostrarprecio();
+          let producto = document.querySelector("#producto");
+          let nuevoProducto = document.createElement("div");
+          nuevoProducto.innerHTML = `<p>${stick.nombre} Valor: $ ${stick.precio}</p>`;
+          producto.appendChild(nuevoProducto);
+          carrito.push(stick.precio);
+          console.log(carrito);
+      })
+  })
+} 
+
+mostrarprecio();  
+
+
+
+//boton borrar
+document.getElementById(`${borrar.id}`).addEventListener(`click`, () => {
+  producto = document.querySelector("#producto");
+  producto.innerHTML = ``;
+  producto.appendChild
+  carrito.length = 0;
+  console.log(carrito);
+});
 
 
 //formulario
@@ -82,11 +104,12 @@ function mostrar(cliente){
   celbaja = sessionStorage.getItem(`datocel`);
   console.log(nombrebaja)
   let formulario = document.getElementById("usuario");
-  formulario.innerHTML = "";
-
-  let nuevoCliente = document.createElement("div")
-  nuevoCliente.className = "datos";
-  nuevoCliente.innerHTML = `<p>Gracias ${nombrebaja} por contactarnos! En breve recibiras un email en: ${emailbaja}</p>`;
-  formulario.appendChild(nuevoCliente);
-  
+  Swal.fire({
+    icon: 'success',
+    title: 'Ingreso sus datos correctamente',
+    titleText: `Nos contactaremos a la brevedad a:`,
+    text: emailbaja,
+}) 
 }
+
+
