@@ -1,49 +1,39 @@
-const datosStickers = [
-  {
-      id: 1,
-      nombre: "Stickers x1",
-      descripcion: "1 Sticker a elección",     precio: 70,
-  },
-  {
-      id: 10,
-      nombre: "Stickers x10",
-      descripcion: "Pack 10 Stickers a elección",
-      precio: 500,
-  },
-  {
-      id: 20,
-      nombre: "Stickers x20",
-      descripcion: "Pack 20 Stickers a elección",
-      precio: 900,
-  },
-];
 //array carrito
 const carrito = [];
 
 
-
 const mostrarStickers = ()=>{
-  let contenedor = document.querySelector
-  ("#sticker");
-  datosStickers.forEach((stick)=> {
-      let sticker = document.createElement("div");
-      sticker.classList.add("botones")
-      sticker.innerHTML=`<div class="card" style="width: 10rem;">
-      <div class="card-body">
-        <h5 class="card-title">${stick.nombre}</h5>
-        <p class="card-text">${stick.descripcion}</p>
-        <a href="#" id=${stick.id} class="btn btn-primary">Elegir</a>
-      </div>
-    </div>`;
+  fetch('./productos.json')
+  .then(resp => resp.json())
+  .then(productos => {
+    let contenedor = document.querySelector
+    ("#sticker");
+    productos.forEach((stick)=> {
+        let sticker = document.createElement("div");
+        sticker.classList.add("botones")
+        sticker.innerHTML=`<div class="card" style="width: 10rem;">
+        <div class="card-body">
+          <h5 class="card-title">${stick.nombre}</h5>
+          <p class="card-text">${stick.descripcion}</p>
+          <a href="#" id=${stick.id} class="btn btn-primary">Elegir</a>
+        </div>
+      </div>`;
       contenedor.appendChild(sticker)
-  });
-  
+    });
+  })
+  .catch(()=>{
+    console.log("Ops!")
+})
 }
+
 mostrarStickers();
 
  //Carrito
  const mostrarprecio = () =>{
-    datosStickers.forEach((stick) => {
+  fetch('./productos.json')
+  .then(resp => resp.json())
+  .then(productos => {
+    productos.forEach((stick) => {
         document.getElementById(`${stick.id}`).addEventListener(`click`, () => {
           let producto = document.querySelector("#producto");
           let nuevoProducto = document.createElement("div");
@@ -51,10 +41,10 @@ mostrarStickers();
           producto.appendChild(nuevoProducto);
           carrito.push(stick.precio);
           console.log(carrito);
-      })
+        })
+    })
   })
-} 
-
+}
 mostrarprecio();  
 
 
@@ -111,5 +101,3 @@ function mostrar(cliente){
     text: emailbaja,
 }) 
 }
-
-
