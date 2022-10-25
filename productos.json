@@ -2,19 +2,44 @@
     {
         "id": 1,
         "nombre": "Stickers x1",
+        "imagen": "./imagenes/stitch.jpg",
         "descripcion": "1 Sticker a elección",     
         "precio": 70
+        
     },
     {
-        "id": 10,
+        "id": 2,
         "nombre": "Stickers x10",
-        "descripcion": "Pack 10 Stickers a elección",
+        "imagen": "./imagenes/fotoprincipal.jpg",
+        "descripcion": "Pack 10 Stickers",
         "precio": 500
     },
     {
-        "id": 20,
+        "id": 3,
         "nombre": "Stickers x20",
-        "descripcion": "Pack 20 Stickers a elección",
+        "imagen": "./imagenes/fotoprincipal.jpg",
+        "descripcion": "Pack 20 Stickers",
+        "precio": 900
+    },
+    {
+        "id": 4,
+        "nombre": "Rick & Morty",
+        "imagen": "./imagenes/rickandmorty.jpg",
+        "descripcion": "Pack de Rick & Morty",
+        "precio": 1000
+    },
+    {
+        "id": 5,
+        "nombre": "The Simpson",
+        "imagen": "./imagenes/simpson.jpg",
+        "descripcion": "Pack The Simpson",
+        "precio": 950
+    },
+    {
+        "id": 6,
+        "nombre": "Pack Etiquetas",
+        "imagen": "./imagenes/fotoprincipal.jpg",
+        "descripcion": "Pack 30 Etiquetas",
         "precio": 900
     }
   ]

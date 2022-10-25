@@ -1,62 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-    <!-- css -->
-    <link rel="stylesheet" href="./style.css">
-    <title>SubliMate</title>
-</head>
-<body class="body">
-    <header class="header row text-center align-items-center">
-        <!-- logo -->
-        <a href="#"><img src="./imagenes/logo.jpg" alt="logo de mi pagina" class="logo"></a>
-        <h1 class="titulo fs-2 fw-bold">Tienda de Stickers</h1>
-    </header>
-    <main class="main">
-        <section class="sticker" id="sticker">
-        </section>
-        
-        <section  class="carrito" id="elegidos">
-            <p>Tus productos elegidos:</p>
-            <div class="ffff" id="producto">
-                
-            </div>
-            <div>
-                <button type="submit" class="boton" id="Comprar">COMPRAR</button>
-                <button type="reset" class="boton" id="borrar">BORRAR</button>
-            </div>
-            <div class="ffff" id="total">
-                <p>Total de la compra: $</p>
-            </div>
-            
-        </section>
-        <section class="usuario text-center" id="usuario">
-            <h2 class="fs-5 fw-bold">Ingresá tus datos:</h2>
-            <form action="" class="form fw-bold">
-                <label for="">Nombre</label>
-                <input type="text" id="nombre" placeholder="Milo Alejo">
-                <label for="">E-mail</label>
-                <input type="email" id="mail" placeholder="alejoymilo@gmail.com">
-                <label for="">Celular</label>
-                <input type="number" id="celular" placeholder="1234567890">
-                <button type="submit" class="boton" id="enviar">Enviar</button>
-                <button type="reset" class="boton" id="restablecer">Reset</button>
-            </form>
-        </section>
 
-    </main>
-    <footer class="footer">
-        <!-- mis redes sociales -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./CSS/style.css">
+  <title>SubliMate</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div>
+        <a href="#"><img src="./imagenes/logo.jpg" alt="logo de mi pagina" class="logo"></a>
+      </div>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="finalizarCompra" class="nav-item">
+              <button class="boton" id="inicio">Inicio</button>
+            </div>
+            <div class="finalizarCompra" class="nav-item">
+              <button class="boton" id="compra">Finalizar Compra</button>
+              <div class="contador" id="contador">
+                <p>Carrito</p>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="productos" class="sectionProd">
+    </section>
+
+    <section class="carrito" id="cart">
+      <p class="elegido fw-bold text-center">Tus Productos Elegidos:</p>
+      <div id="dibujoCarritos" class="classCarrito">
+      </div>
+      <div>
+        <button class="boton" id="borrarProd">Borrar</button>
+      </div>
+      <div>
+        <p class="total fw-bold">TOTAL:</p>
+        <div id="total">
+        </div>
+      </div>
+      <section class="usuario text-center" id="usuario">
+        <h2 class="fs-6 fw-bold">Ingresá tus datos completar la compra:</h2>
+        <form id="form" class="form">
+          <label for="">Nombre</label>
+          <input type="text" id="nombre" placeholder="Milo Alejo">
+          <label for="">E-mail</label>
+          <input type="email" id="mail" placeholder="alejoymilo@gmail.com">
+          <label for="">Celular</label>
+          <input type="number" id="celular" placeholder="1234567890">
+          <button type="submit" class="boton" id="enviarForm">Enviar</button>
+          <button type="reset" class="boton" id="restablecer">Reset</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+    <!-- mis redes sociales -->
     <h3 class="fs-6 fw-bold mx-4">Seguinos en:</h3>
     <ul class="footer__misredes text-center list-inline text-decoration-none">
       <li class="footer__misredes__link"><a href="https://www.facebook.com/SublimateOk2018" target="_blank"><i
@@ -66,12 +84,17 @@
       <li class="footer__misredes__link"><a href="https://www.whatsapp.com" target="_blank"><i
             class="bi bi-whatsapp fs-2"></i></a></li>
     </ul>
+  </footer>
 
-    </footer>
-    <!-- SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.34/dist/sweetalert2.all.min.js"></script>
-    <!-- JS -->
-    <script src="./app.js"></script>
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <!-- SWEETALERT2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.34/dist/sweetalert2.all.min.js"></script>
+  <!-- JS -->
+  <script src="./JS/app.js"></script>
 </body>
 
 </html>

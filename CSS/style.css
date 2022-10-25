@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.html{
+    height: 100%;
+}
+.header{
+    z-index: 100;
+    background-color: #d3bcf6;
+}
+
+.logo{
+    width: 10rem;
+    padding: 15px;
+}
+/* MAIN */
+
+/* Dibujar Productos */
+
+.dibujoProd{
+    margin: .5rem;
+    width: 10rem;
+    border: solid 1px blueviolet;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.dibujoProd img{
+    width: 5rem;
+}
+
+.btnComprar{
+    margin: .5rem;
+    background-color: #d3bcf6;
+    color: black;
+    border-radius: .5rem;
+    border-color: violet;
+}
+
+.sectionProd{
+    display: flex;
+    justify-content: center;
+}
+
+/* CARRITO */
+
+.carrito{
+    opacity: 0; 
+    border: solid 2px violet;
+   
+}
+.cart{
+    opacity: 0;
+}
+
+.classCarrito{
+    width: 90%;
+    height: fit-content;
+    background-color: #d3bcf6;
+}
+
+.sticker{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+/* botones */
+.boton{
+    width: fit-content;
+    border: solid 3px violet;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+.car-img{
+    width: 80px;
+}
+
+.compraCar{
+    display: flex;
+    padding: .5rem;
+}
+
+.btnGomaProducto{
+    background-color: pink;
+    border-radius: .5rem;
+    margin-left: 1rem;
+}
+
+.cant{
+    width: 2rem;
+}
+
+.carrito{
+    margin: 20px;
+    justify-content: center;
+    background-color: #d3bcf6;
+    display: flex;
+   
+}
+
+.finalizarCompra{
+    display: flex;
+    padding: 1rem;
+}
+
+.contador{
+    border: solid 1px blueviolet;
+    border-radius: 1rem;
+    background-color: #d3bcf6;
+    padding: 1rem;
+    margin: 1rem;
+}
+.total{
+    margin: 10px;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    padding: 20px;
+}
+/* footer */
+.footer{
+    margin-top: auto;
+}
+.footer__misredes{
+    background-color: #d3bcf6;
+    display: flex;
+    justify-content: center;
+}
+.bi{
+    color: black;
+    margin: 10px;
+}
